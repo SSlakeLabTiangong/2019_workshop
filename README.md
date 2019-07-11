@@ -1,1 +1,1 @@
-# 1st_trainning_class
+# 第一届 超算应用与材料计算培训班
