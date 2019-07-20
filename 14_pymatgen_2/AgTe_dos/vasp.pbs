@@ -1,0 +1,19 @@
+#PBS -N vasp_test
+#PBS -l nodes=2:ppn=12
+#PBS -l walltime=12:00:00
+#PBS -q batch
+#PBS -V
+#PBS -S /bin/bash 
+### Set intel environment###
+source /opt/intel/composer_xe_2015/bin/compilervars.sh intel64
+source /opt/intel/mkl/bin/intel64/mklvars_intel64.sh
+source /opt/intel/impi/5.0.2.044/bin64/mpivars.sh
+cd $PBS_O_WORKDIR
+EXEC=/opt/software/vasp.5.4.1/bin/vasp_std
+NP=`cat $PBS_NODEFILE | wc -l`
+NN=`cat $PBS_NODEFILE | sort | uniq | tee /tmp/nodes.$$ | wc -l`
+cat $PBS_NODEFILE > /tmp/nodefile.$$
+mpirun -genv I_MPI_DEVICE rdssm -machinefile /tmp/nodefile.$$ -n $NP $EXEC
+rm -rf /tmp/nodefile.$$
+rm -rf /tmp/nodes.$$
+
