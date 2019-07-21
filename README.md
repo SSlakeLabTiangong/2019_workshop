@@ -6,4 +6,4 @@
 ### 文件传输软件
 * [WinSCP](https://www.winscp.net/)
 
-## ![](poster2.jpg)
+## ![](poster.jpg)
