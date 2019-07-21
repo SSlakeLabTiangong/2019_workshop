@@ -19,6 +19,6 @@
 
 ### 数据处理软件
 
--   [Gnuplot](http://www.gnuplot.info/)
+-   [Gnuplot](http://www.gnuplot.info/) ("天工" HPC 上已安装)
 
 ## ![](poster.jpg)
