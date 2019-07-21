@@ -5,5 +5,7 @@
 * [Xshell](https://xshell.en.softonic.com/)
 ### 文件传输软件
 * [WinSCP](https://www.winscp.net/)
-
+### Python安装程序及处理所需包
+* [Anaconda](https://www.anaconda.com/distribution/)
+* [Pymatgen](http://pymatgen.org/)
 ## ![](poster.jpg)
