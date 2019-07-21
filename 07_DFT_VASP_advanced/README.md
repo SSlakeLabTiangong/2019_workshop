@@ -18,3 +18,5 @@
 -   `7-2_diamondSi_dos`: Si 态密度计算.
 
 更多 VASP 计算实例, 可以参考 [VASP wiki examples](https://cms.mpi.univie.ac.at/wiki/index.php/Category:Examples).
+
+>   部分计算结果已经放在 `img` 文件夹内, 以供参考.
