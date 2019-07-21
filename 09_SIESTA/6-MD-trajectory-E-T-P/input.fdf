@@ -1,0 +1,58 @@
+AtomicCoordinatesFormat  Fractional
+LatticeConstant  1.0  Ang
+
+NumberOfAtoms    3
+NumberOfSpecies  2
+
+%block LatticeVectors
+       10.0         0.0000000000         0.0000000000
+       0.0        10.0         0.0000000000
+        0.00        0.00         10.0
+%endblock LatticeVectors
+
+%block ChemicalSpeciesLabel
+   1    1    H
+   2    8    O
+%endblock ChemicalSpeciesLabel
+
+%block AtomicCoordinatesAndAtomicSpecies
+    0.445177843       0.413492392       0.416789212  1 H
+    0.571932105       0.410175739       0.503693317  1 H
+    0.475729124       0.411685949       0.508087733  2 O
+%endblock AtomicCoordinatesAndAtomicSpecies
+
+#%block GeometryConstraints
+#position 1 2 3 4 5 6 7 0.0 0.0 1.0
+#%endblock GeometryConstraints
+
+MD.UseSaveXV T
+SolutionMethod      diagon
+XML.Write False
+MaxSCFIterations 100
+DM.AllowExtrapolation .false.
+XC.functional GGA
+XC.authors  PBE
+SCFMustConverge T
+#SlabDipoleCorrection True
+SaveRho       F
+WriteMDHistory .true.
+LongOutput
+
+MD.TypeOfRun        verlet
+MD.FinalTimeStep      1000
+MD.LengthTimeStep     1 fs
+MD.InitialTemperature  300 k
+
+DM.NumberPulay        5
+SCF.Pulay.Damping     0.5
+MeshCutoff 200 Ry
+
+DM.MixingWeight       0.3         # New DM amount for next SCF cycle
+DM.Tolerance     1.d-4
+
+%block kgrid_Monkhorst_Pack
+1 0 0 0.0
+0 1 0 0.0
+0 0 1 0.0
+%endblock kgrid_Monkhorst_Pack
+
