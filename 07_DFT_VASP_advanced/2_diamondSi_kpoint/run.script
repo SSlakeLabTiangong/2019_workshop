@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+#SBATCH --job-name=vasp
+#SBATCH --output=job_%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=36
+#SBATCH --time=1:00:00
+#SBATCH --partition=regular
+
+module load mpi/intelmpi/2017.4.239
+
+# VASP Location
+EXE=/public/software/vasp/vasp.5.4.1-impi/bin/vasp_std
+
+# run the job
+for i in 1 2 3 4 5 6 7 8 9 10 11; do
+cat >KPOINTS <<!
+K-Points
+ 0
+Monkhorst Pack
+ $i $i $i
+ 0  0  0
+!
+echo "nk = $i"
+srun --mpi=pmi2 $EXE
+E=`cat OSZICAR | awk '/F=/ {print $3}'`
+echo $i $E  >>summary.txt
+done

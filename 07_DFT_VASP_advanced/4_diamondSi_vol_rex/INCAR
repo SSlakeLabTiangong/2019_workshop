@@ -1,0 +1,7 @@
+general:
+ System = diamond Si
+ ISMEAR = 0; SIGMA = 0.1;
+ ENCUT  =  360
+ IBRION=2; ISIF=3 ; NSW=15
+ EDIFF  = 0.1E-04
+ EDIFFG = -0.01

@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+#SBATCH --job-name=vasp
+#SBATCH --output=job_%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=36
+#SBATCH --time=1:00:00
+#SBATCH --partition=regular
+
+module load mpi/intelmpi/2017.4.239
+
+# VASP Location
+EXE=/public/software/vasp/vasp.5.4.1-impi/bin/vasp_std
+
+# run the job
+for i in  0.05 0.10 0.15 0.20 0.25 0.30 0.40 ; do
+cat >INCAR <<!
+general:
+ System = diamond Si
+ ISTART = 0
+ ICHARG = 2
+ ENCUT  = 240
+ ISMEAR = 0
+ SIGMA  = $i
+!
+echo "sigma = $i"
+srun --mpi=pmi2 $EXE
+E=`cat OSZICAR | awk '/F=/ {print $3}'`
+echo $i $E  >>summary.txt
+done

@@ -1,0 +1,7 @@
+general:
+ System = diamond Si
+ ISTART = 0
+ ICHARG = 2
+ ENCUT  = 1000
+ ISMEAR = 0
+ SIGMA  = 0.1

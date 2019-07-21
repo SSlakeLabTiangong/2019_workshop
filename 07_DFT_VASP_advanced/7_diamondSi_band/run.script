@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+#SBATCH --job-name=vasp
+#SBATCH --output=job_%j.out
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=36
+#SBATCH --time=1:00:00
+#SBATCH --partition=regular
+
+module load mpi/intelmpi/2017.4.239
+
+# VASP Location
+EXE=/public/software/vasp/vasp.5.4.1-impi/bin/vasp_std
+
+# run the job
+srun --mpi=pmi2 $EXE
