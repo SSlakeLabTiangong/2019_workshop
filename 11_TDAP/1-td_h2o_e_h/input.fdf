@@ -36,7 +36,7 @@ LongOutput
 #WriteDenchar T
 
 TD.LengthTimeStep   0.05 fs
-TD.FinalTimeStep    1000
+TD.FinalTimeStep    200
 TD.WriteDMOfSelectiveOrbitals True
 %block TD.PartialDMBand
 1
@@ -56,7 +56,7 @@ TD.WriteDMOfSelectiveOrbitals True
 %endblock TD.PartialDMSumOrbitals
 
 MD.TypeOfRun        verlet
-MD.FinalTimeStep      1000
+MD.FinalTimeStep      200
 MD.LengthTimeStep     0.05 fs
 MD.InitialTemperature  293 k
 

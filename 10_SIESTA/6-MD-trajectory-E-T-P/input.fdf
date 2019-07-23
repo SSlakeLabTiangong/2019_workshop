@@ -39,7 +39,7 @@ WriteMDHistory .true.
 LongOutput
 
 MD.TypeOfRun        verlet
-MD.FinalTimeStep      1000
+MD.FinalTimeStep      200
 MD.LengthTimeStep     1 fs
 MD.InitialTemperature  300 k
 
