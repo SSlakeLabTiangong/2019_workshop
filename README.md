@@ -2,7 +2,7 @@
 ## 所需软件
 ### 登陆终端软件
 * [putty](https://www.putty.org/)
-* [Xshell](https://xshell.en.softonic.com/)
+* [Xshell](https://www.netsarang.com/en/free-for-home-school/)
 ### 文件传输软件
 
 * [WinSCP](https://www.winscp.net/)
