@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --job-name=vasp
+#SBATCH --output=vasp.out
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=36
+#SBATCH --time=00:30:00
+#SBATCH -p debug
+
+module load mpi/intelmpi/2017.4.239
+
+srun --mpi=pmi2 /public/software/vasp/vasp.5.4.1-impi/bin/vasp_std
