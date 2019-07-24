@@ -1,0 +1,65 @@
+ running on   36 total cores
+ distrk:  each k-point on   36 cores,    1 groups
+ distr:  one band on    1 cores,   36 groups
+ using from now: INCAR     
+ vasp.5.4.1 05Feb16 (build Apr 16 2019 13:49:49) complex                        
+  
+ POSCAR found type information on POSCAR  Si
+ POSCAR found :  1 types and       2 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default, NPAR=number of cores might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|  ADVICE TO THIS USER RUNNING 'VASP/VAMP'   (HEAR YOUR MASTER'S VOICE ...):  |
+|                                                                             |
+|      You have a (more or less) 'small supercell' and for smaller cells      |
+|      it is recommended  to use the reciprocal-space projection scheme!      |
+|      The real space optimization is not  efficient for small cells and it   |
+|      is also less accurate ...                                              |
+|      Therefore set LREAL=.FALSE. in the  INCAR file                         |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ WARNING: small aliasing (wrap around) errors must be expected
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1    -0.526752111515E+01   -0.52675E+01   -0.32695E+03  1440   0.166E+02
+DAV:   2    -0.108301854140E+02   -0.55627E+01   -0.55627E+01  2160   0.162E+01
+DAV:   3    -0.108358921488E+02   -0.57067E-02   -0.57067E-02  1440   0.681E-01
+DAV:   4    -0.108358953845E+02   -0.32357E-05   -0.32357E-05  2844   0.165E-02
+DAV:   5    -0.108358953845E+02   -0.59117E-11   -0.58211E-11  1440   0.149E-05    0.542E+00
+RMM:   6    -0.108814527982E+02   -0.45557E-01   -0.20575E-02  1444   0.329E-01    0.321E+00
+RMM:   7    -0.108183850383E+02    0.63068E-01   -0.17709E-02  1455   0.319E-01    0.212E+00
+RMM:   8    -0.108340104602E+02   -0.15625E-01   -0.38855E-03  1515   0.154E-01    0.443E-01
+RMM:   9    -0.108360882645E+02   -0.20778E-02   -0.33539E-04  1633   0.424E-02    0.953E-02
+RMM:  10    -0.108364899158E+02   -0.40165E-03   -0.18325E-04  1511   0.296E-02    0.431E-02
+RMM:  11    -0.108365580906E+02   -0.68175E-04   -0.52647E-05  1570   0.147E-02    0.319E-02
+RMM:  12    -0.108365737392E+02   -0.15649E-04   -0.62393E-06  1469   0.522E-03    0.115E-02
+RMM:  13    -0.108365772571E+02   -0.35179E-05   -0.15872E-06  1163   0.277E-03
+   1 F= -.11298315E+02 E0= -.11298315E+02  d E =0.000000E+00  mag=    -0.0001
