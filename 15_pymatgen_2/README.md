@@ -1,5 +1,5 @@
 # 关于生成能带高对称点的说明
-###  UserWarning: The input structure does not match the expected standard primitive! The path can be incorrect. Use at your own risk. 问题
+###  -  UserWarning: The input structure does not match the expected standard primitive! The path can be incorrect. Use at your own risk. 问题
 
 pymatgen.symmetry.bandstructure模块的要求是‘It should be used with primitive structures that comply with the definition from the paper.’，所以它第一步会把输入结构的矩阵用get_primitive_standard_structure(international_monoclinic=False)命令将其转化为Computational Materials Science,49(2), 299-312. doi:10.1016/j.commatsci.2010.05.010中规定的标准基矢下的原胞。
 
