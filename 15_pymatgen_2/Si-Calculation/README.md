@@ -33,4 +33,4 @@ direct
 如果MP中下载的原胞基矢a,b,c顺序和get_primitive_standard_structure生成的顺序一致的话，结果不会有影响（原子坐标和之后生成的高对称点都是direct 【fractional】形式的），但会有warning。然而，一旦基矢不一一对应，比如a!=b!=c，顺序还是自己定的，结果肯定有问题。这时候需要先把结构用get_primitive_standard_structure转化为标准基矢下的原胞，然后再做进一步操作。
 
 
-所以请使用标准基矢下的原胞作为计算能带前的初始结构（包括结构优化和自洽），可使用`get_primitive_standard_structure.py`生成标准基矢的POSCAR以及高对称点的KPOINTS，此时不会有UserWarning。
+所以请使用标准基矢下的原胞作为计算能带前的初始结构（包括之前结构优化和自洽），可使用`get_primitive_standard_structure.py`生成标准基矢的POSCAR以及高对称点的KPOINTS，此时不会有UserWarning。
